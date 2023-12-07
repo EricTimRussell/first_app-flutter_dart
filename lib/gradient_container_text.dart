@@ -1,13 +1,14 @@
 import 'package:flutter/material.dart';
 
 class GradientContainerText extends StatelessWidget {
-  const GradientContainerText({super.key});
+  const GradientContainerText(this.text, {super.key});
 
+  final String text;
   @override
   Widget build(context) {
-    return const Text(
-      'Howdy!',
-      style: TextStyle(
+    return Text(
+      text,
+      style: const TextStyle(
         fontSize: 28,
         color: Colors.white,
       ),
