@@ -6,6 +6,8 @@ const endAlignment = Alignment.bottomRight;
 class GradientContainer extends StatelessWidget {
   const GradientContainer(this.color_1, this.color_2, {super.key});
 
+  void rollDice() {}
+
   final Color color_1;
   final Color color_2;
 
@@ -24,9 +26,22 @@ class GradientContainer extends StatelessWidget {
         ),
       ),
       child: Center(
-        child: Image.asset(
-          'assets/dice-1.png',
-          width: 200,
+        child: Column(
+          mainAxisSize: MainAxisSize.min,
+          children: [
+            Image.asset(
+              'assets/dice-1.png',
+              width: 200,
+            ),
+            TextButton(
+              onPressed: rollDice,
+              style: TextButton.styleFrom(
+                  padding: const EdgeInsets.only(top: 20),
+                  foregroundColor: Colors.white,
+                  textStyle: const TextStyle(fontSize: 28)),
+              child: const Text('Roll'),
+            ),
+          ],
         ),
       ),
     );
